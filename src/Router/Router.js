@@ -1,5 +1,6 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import HandleError from '../HandleError/HandleError';
 import Main from '../Layout/Main';
 import Blog from '../Pages/Blog/Blog';
 import Home from '../Pages/Home/Home';
@@ -15,24 +16,28 @@ const Router = () => {
             children: [
                 {
                     path: '/',
-                    element:<Home/>
+                    element: <Home />
                 },
                 {
                     path: 'Blog',
-                    element:<Blog/>
+                    element: <Blog />
                 },
                 {
                     path: 'Login',
-                    element:<Login/>
+                    element: <Login />
                 },
                 {
                     path: 'Register',
-                   element:<Register/> 
+                    element: <Register />
                 }
             ]
-    }
+        },
+        {
+            path: '*',
+            element: <HandleError />
+        }
 
-])
+    ])
 
     return (
         <div>
