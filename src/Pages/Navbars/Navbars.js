@@ -16,9 +16,7 @@ const Navbars = () => {
                             className="mr-3 h-6 sm:h-9 rounded-2xl hover:shadow-lg "
                             alt=""
                         />
-                        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-                            project
-                        </span>
+                        
                     </Link>
                 <Navbar.Toggle />
                 <Navbar.Collapse>
