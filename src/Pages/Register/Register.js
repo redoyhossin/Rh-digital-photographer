@@ -1,15 +1,18 @@
 import React from 'react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/UseContext';
 
 
 
 const Register = () => {
     const { CreateRegister } = useContext(AuthContext)
+    const navigte = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
 
     const handleRegister = (e) => {
-        e.preventDefault();
+         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
         const email = form.email.value;
@@ -20,6 +23,8 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 form.reset();
+                navigte(from, { replace: true });
+
             }).catch((error)=>console.log('error',error.message))
         
     }

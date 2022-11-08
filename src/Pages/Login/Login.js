@@ -1,12 +1,15 @@
 import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/UseContext';
 
 const Login = () => {
-    const { login,ResetPassword,signinGoogle,signinGithub } = useContext(AuthContext);
-    const [email,setResetEmail] = useState('');
+    const { login, ResetPassword, signinGoogle, signinGithub } = useContext(AuthContext);
+    const [email, setResetEmail] = useState('');
+    const navigte = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
 
 
     const handlelogin = (e) => {
@@ -19,6 +22,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 form.reset();
+                navigte(from, { replace: true });
             }).catch((error) => console.log('error', error.message))
     };
 
@@ -39,15 +43,19 @@ const Login = () => {
         signinGoogle()
             .then(result => {
                 const user = result.user;
+                navigte(from, { replace: true });
+
             }).catch((error) => console.log('error', error.message))
     };
 
     const GithubLogin = () => {
         signinGithub()
-        .then(result => {
-            const user = result.user;
-            console.log(user)
-        }).catch((error) => console.log('error', error.message))
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                navigte(from, { replace: true });
+
+            }).catch((error) => console.log('error', error.message))
     }
 
     return (
