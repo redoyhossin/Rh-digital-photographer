@@ -1,6 +1,6 @@
 import React from 'react';
 import { createContext } from 'react';
-import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import app from '../Firebase/Firebase.config';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -41,6 +41,10 @@ const UseContext = ({ children }) => {
         setLoding(true);
 
         return signInWithPopup(auth, provider2);
+    };
+    const logout = () => {
+        setLoding(true);
+        return signOut(auth);
     }
 
 
@@ -56,7 +60,7 @@ const UseContext = ({ children }) => {
         }
     }, [])
 
-    const authValue = { CreateRegister, login, ResetPassword, signinGoogle, signinGithub, users, loding }
+    const authValue = { CreateRegister, login, ResetPassword, signinGoogle, signinGithub, users, loding,logout }
     return (
         <div>
             <AuthContext.Provider value={authValue}>

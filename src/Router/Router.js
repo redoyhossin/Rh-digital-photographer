@@ -2,10 +2,12 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HandleError from '../HandleError/HandleError';
 import Main from '../Layout/Main';
+import AddReview from '../Pages/AddReview/AddReview';
 import Blog from '../Pages/Blog/Blog';
 import Allservicehome from '../Pages/Home/Allservicehome/Allservicehome';
 import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
+import PrivateRout from '../Pages/PrivateRout/PrivateRout';
 import Register from '../Pages/Register/Register';
 
 const Router = () => {
@@ -36,6 +38,10 @@ const Router = () => {
                 {
                     path: 'Register',
                     element: <Register />
+                },
+                {
+                    path: 'AddReview',
+                    element:<PrivateRout><AddReview/></PrivateRout>
                 }
             ]
         },
