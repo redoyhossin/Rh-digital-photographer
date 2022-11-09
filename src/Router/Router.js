@@ -6,6 +6,7 @@ import AddReview from '../Pages/AddReview/AddReview';
 import Blog from '../Pages/Blog/Blog';
 import Allservicehome from '../Pages/Home/Allservicehome/Allservicehome';
 import Home from '../Pages/Home/Home';
+import Singleservice from '../Pages/Home/Homeservice/Singleservice';
 import Login from '../Pages/Login/Login';
 import PrivateRout from '../Pages/PrivateRout/PrivateRout';
 import Register from '../Pages/Register/Register';
@@ -20,12 +21,12 @@ const Router = () => {
                 {
                     path: '/',
                     element: <Home />,
-                    loader:()=>fetch('http://localhost:5000/allserviceshome')
+                    loader: () => fetch('http://localhost:5000/allserviceshome')
                 },
                 {
                     path: 'Allservicehome',
                     element: <Allservicehome />,
-                    loader:()=>fetch('http://localhost:5000/allservices')
+                    loader: () => fetch('http://localhost:5000/allservices')
                 },
                 {
                     path: 'Blog',
@@ -41,7 +42,13 @@ const Router = () => {
                 },
                 {
                     path: 'AddReview',
-                    element:<PrivateRout><AddReview/></PrivateRout>
+                    element: <PrivateRout><AddReview /></PrivateRout>
+                },
+                {
+                    path: '/Singleservice/:Id',
+                    loader: ({ params }) => fetch(`http://localhost:5000/allservices/${params.Id}`),
+                    element: <Singleservice />
+
                 }
             ]
         },

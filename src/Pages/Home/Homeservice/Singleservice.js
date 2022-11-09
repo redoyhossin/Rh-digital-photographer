@@ -1,18 +1,15 @@
-import { Button, Card, Rating } from 'flowbite-react';
+import { Rating } from 'flowbite-react';
 import React from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
-import { Link } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 
-const Allservicehomecart = ({ shows }) => {
-    const { description, details, name, picture, price, rating, _id } = shows;
-
+const Singleservice = () => {
+    const singleS = useLoaderData();
+    const {description, details, name, picture, price, rating, _id } = singleS;
     return (
-        <div className='flex justify-center mb-6'>
+        <div>
             <div className="max-w-xs rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100 ">
-
-                <PhotoProvider toolbarRender={({ rotate, onRotate }) => {
-                    return <svg className="PhotoView-Slider__toolbarIcon" onClick={() => onRotate(rotate + 90)} />;
-                }}>
+            <PhotoProvider>
                     <PhotoView src={picture}>
                         <img src={picture} alt="" className="object-cover object-center w-full rounded-t-md h-64 dark:bg-gray-500" />
                     </PhotoView>
@@ -31,12 +28,9 @@ const Allservicehomecart = ({ shows }) => {
                                 {rating}
                             </p>
                         </Rating>
-                        <p className="dark:text-gray-100">{description.slice(0, 100)}...</p>
-                        <Link to={`/Singleservice/${_id}`}>
-                            <Button className='mt-2'>
-                                view details
-                            </Button>
-                        </Link>
+                        <p className="dark:text-gray-100 text-xl">{description}</p>
+                        <p className="dark:text-gray-100 text-base">{details}</p>
+                       
                     </div>
 
                 </div>
@@ -45,4 +39,4 @@ const Allservicehomecart = ({ shows }) => {
     );
 };
 
-export default Allservicehomecart;
+export default Singleservice;
