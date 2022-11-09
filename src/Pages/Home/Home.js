@@ -1,9 +1,12 @@
 import React from 'react';
+import Homeservice from './Homeservice/Homeservice';
+import Slider from './slider/Slider';
 
 const Home = () => {
     return (
         <div>
-            this is home
+        <Slider />
+        <Homeservice/>
         </div>
     );
 };
