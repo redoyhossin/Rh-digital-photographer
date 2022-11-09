@@ -5,6 +5,7 @@ import Homeservicecart from './Homeservicecart/Homeservicecart';
 
 const Homeservice = () => {
     const homeservice = useLoaderData();
+
     return (
         <div className='my-12'>
             <div >
@@ -18,7 +19,7 @@ const Homeservice = () => {
 
             <div className='flex justify-center'>
 
-                <Link to=''>
+                <Link to='Allservicehome'>
                     <Button
                         outline={true}
                         gradientDuoTone="purpleToBlue"

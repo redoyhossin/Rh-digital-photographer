@@ -2,7 +2,6 @@ import { Card } from 'flowbite-react';
 import React from 'react';
 
 const Homeservicecart = ({ homes }) => {
-    console.log(homes)
     const { description, details, name, picture, price, rating, _id } = homes;
     return (
         <div className='flex justify-center mb-6'>

@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HandleError from '../HandleError/HandleError';
 import Main from '../Layout/Main';
 import Blog from '../Pages/Blog/Blog';
+import Allservicehome from '../Pages/Home/Allservicehome/Allservicehome';
 import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
@@ -18,6 +19,11 @@ const Router = () => {
                     path: '/',
                     element: <Home />,
                     loader:()=>fetch('http://localhost:5000/allserviceshome')
+                },
+                {
+                    path: 'Allservicehome',
+                    element: <Allservicehome />,
+                    loader:()=>fetch('http://localhost:5000/allservices')
                 },
                 {
                     path: 'Blog',
