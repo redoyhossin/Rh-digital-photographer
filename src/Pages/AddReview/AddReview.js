@@ -5,7 +5,6 @@ import { useContext } from 'react';
 import { AuthContext } from '../../context/UseContext';
 import UseTitle from '../../Hooks/Usetitle';
 import Addreviewtable from './addreviewtable/Addreviewtable';
-// const { Message, email, name, photo, picture, price, rating, servicesName, services, _id } = rv;
 
 const AddReview = () => {
     UseTitle('AddReview')
@@ -13,10 +12,30 @@ const AddReview = () => {
     const [addReview, setAddReview] = useState([])
     // console.log(addReview)
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${users.email}`)
+        fetch(`http://localhost:5000/reviews?email=${users?.email}`)
             .then(res => res.json())
             .then(data => setAddReview(data))
-    }, [users?.email])
+    }, [users?.email]);
+
+
+    const handledelete = (id) => {
+
+        const deleteagree = window.confirm(`Are you sure delete review item: ${id}`);
+        if (deleteagree) {
+            console.log('delete user', id)
+            fetch(`http://localhost:5000/reviews/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        alert('delete done')
+                        const remeining = addReview.filter(rw => rw._id !== id);
+                        setAddReview(remeining);
+                    }
+                })
+        }
+    }
 
     return (
         <div>
@@ -52,7 +71,7 @@ const AddReview = () => {
 
                     <tbody>
                         {
-                            addReview.map(rv => <Addreviewtable key={rv._id} rv={rv} />)
+                            addReview.map(rv => <Addreviewtable key={rv._id} rv={rv} handledelete={handledelete} />)
                         }
                     </tbody>
 

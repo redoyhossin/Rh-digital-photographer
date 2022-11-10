@@ -8,7 +8,6 @@ const Reviewsfst = ({singleS}) => {
     const { description, details, name, picture, price, rating, _id } = singleS;
     const { users } = useContext(AuthContext);
 
-console.log(singleS)
 
 
     const handlereview = (e) => {
