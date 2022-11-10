@@ -9,7 +9,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 function App() {
   return (
     <div>
-      <ToastContainer position='center'/>
+      <ToastContainer position='top-center'/>
      <Router/>
     </div>
   );

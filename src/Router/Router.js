@@ -42,6 +42,7 @@ const Router = () => {
                 },
                 {
                     path: 'AddReview',
+                    
                     element: <PrivateRout><AddReview /></PrivateRout>
                 },
                 {
@@ -49,7 +50,8 @@ const Router = () => {
                     loader: ({ params }) => fetch(`http://localhost:5000/allservices/${params.Id}`),
                     element: <Singleservice />
 
-                }
+                },
+               
             ]
         },
         {
