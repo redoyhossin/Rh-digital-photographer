@@ -1,44 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { useEffect } from 'react';
-import { useContext } from 'react';
-import { AuthContext } from '../../context/UseContext';
-import UseTitle from '../../Hooks/Usetitle';
-import Addreviewtable from './addreviewtable/Addreviewtable';
+import Allreviewsaidcart from './allreviewsaidcart/Allreviewsaidcart';
 
-const AddReview = () => {
-    UseTitle('AddReview')
-    const { users } = useContext(AuthContext);
-    const [addReviews, setAddReview] = useState([])
+const Allreviewsaid = () => {
+    const [reviewitemall,setreviewitemall] =useState([])
+
+
+
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${users?.email}`)
+        fetch(`http://localhost:5000/reviews`)
             .then(res => res.json())
-            .then(data => setAddReview(data))
-    }, [users?.email]);
-
-
-    const handledelete = (id) => {
-
-        const deleteagree = window.confirm(`Are you sure delete review item: ${id}`);
-        if (deleteagree) {
-            console.log('delete user', id)
-            fetch(`http://localhost:5000/reviews/${id}`, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount > 0) {
-                        alert('delete done')
-                        const remeining = addReviews.filter(rw => rw._id !== id);
-                        setAddReview(remeining);
-                    }
-                })
-        }
-    }
-
+            .then(data => setreviewitemall(data));
+    }, )
+    
     return (
         <div>
-
             <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
 
                 <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -70,18 +46,15 @@ const AddReview = () => {
 
                     <tbody>
                         {
-                            addReviews.map(rv => <Addreviewtable key={rv._id} rv={rv} handledelete={handledelete} />)
+                            reviewitemall.map(ritem => <Allreviewsaidcart key={ritem._id} ritem={ ritem} />)
                         }
+                       
                     </tbody>
 
                 </table>
             </div>
-            
-
         </div>
     );
 };
 
-
-
-export default AddReview;
+export default Allreviewsaid;

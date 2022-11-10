@@ -2,14 +2,15 @@ import { Rating } from 'flowbite-react';
 import React from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { useLoaderData } from 'react-router-dom';
+import Allreviewsaid from '../../AddReview/allreviewsaid/Allreviewsaid';
 import Reviewsfst from './Homeservicecart/reviewspart/reviewsfst/Reviewsfst';
 
 const Singleservice = () => {
     const singleS = useLoaderData();
     const { description, details, name, picture, price, rating, _id } = singleS;
     return (
-        <div className=''>
-            <div className='  lg:flex lg:justify-between px-5 my-4'>
+        <div className='mb-10'>
+            <div className='  lg:flex lg:justify-around px-5 my-4'>
                 <div className="max-w-xs rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100 mb-3 ">
                     <PhotoProvider>
                         <PhotoView src={picture}>
@@ -38,9 +39,12 @@ const Singleservice = () => {
                     </div>
                 </div>
 
-                <div className=''>
+                <div >
                     <Reviewsfst singleS={singleS} />
                 </div>
+            </div>
+            <div className='mb-10'>
+                <Allreviewsaid />
             </div>
         </div>
     );

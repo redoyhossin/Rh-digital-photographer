@@ -10,6 +10,7 @@ import Singleservice from '../Pages/Home/Homeservice/Singleservice';
 import Login from '../Pages/Login/Login';
 import PrivateRout from '../Pages/PrivateRout/PrivateRout';
 import Register from '../Pages/Register/Register';
+import Addservice from '../Pages/servicespart/Addservice/Addservice';
 
 const Router = () => {
 
@@ -51,6 +52,10 @@ const Router = () => {
                     element: <Singleservice />
 
                 },
+                {
+                    path: 'Addservice',
+                   element:<Addservice/> 
+                }
                
             ]
         },

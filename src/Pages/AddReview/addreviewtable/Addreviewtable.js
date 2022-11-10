@@ -6,13 +6,18 @@ import { useEffect } from 'react';
 
 const Addreviewtable = ({ rv,handledelete }) => {
 
-    const { Message, email, name, photo, picture, price, rating, servicesName, services, _id } = rv;
-    const [servicesOder,setservicesOder] = useState({});
+    const { Message, email, name,  picture, price, rating, servicesName, services, _id } = rv;
+    const [servicesOder, setservicesOder] = useState({});
+    
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${services}`)
+        fetch(`http://localhost:5000/reviews/${_id}`)
+            
             .then(res => res.json())
+
             .then(data => setservicesOder(data))
-    }, [services])
+        
+    }, [_id]);
+
 
     return (
         <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -25,7 +30,7 @@ const Addreviewtable = ({ rv,handledelete }) => {
             <th scope="row" className="flex items-center py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 <img className="w-10 h-10 rounded-full" src={picture} alt="Jese image" />
                 <div className="pl-3">
-                    <div className="text-base font-semibold">Thomas Lean</div>
+                    <div className="text-base font-semibold">{name}</div>
                     <div className="font-normal text-gray-500">{email}</div>
                 </div>
             </th>
