@@ -2,10 +2,12 @@ import React from 'react';
 import { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/UseContext';
+import UseTitle from '../../Hooks/Usetitle';
 
 
 
 const Register = () => {
+    UseTitle('Register')
     const { CreateRegister } = useContext(AuthContext)
     const navigte = useNavigate();
     const location = useLocation();

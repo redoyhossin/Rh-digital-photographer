@@ -3,8 +3,10 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/UseContext';
+import UseTitle from '../../Hooks/Usetitle';
 
 const Login = () => {
+    UseTitle('Login')
     const { login, ResetPassword, signinGoogle, signinGithub } = useContext(AuthContext);
     const [email, setResetEmail] = useState('');
     const navigte = useNavigate();

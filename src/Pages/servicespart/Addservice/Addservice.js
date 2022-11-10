@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { useContext } from 'react';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../../context/UseContext';
+import UseTitle from '../../../Hooks/Usetitle';
 
 const Addservice = () => {
+    UseTitle('Addservice')
     const { users } = useContext(AuthContext)
     const [user, setUser] = useState({});
 

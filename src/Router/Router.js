@@ -26,7 +26,7 @@ const Router = () => {
                 },
                 {
                     path: 'Allservicehome',
-                    element: <Allservicehome />,
+                    element: <PrivateRout><Allservicehome /></PrivateRout>,
                     loader: () => fetch('http://localhost:5000/allservices')
                 },
                 {
@@ -43,20 +43,20 @@ const Router = () => {
                 },
                 {
                     path: 'AddReview',
-                    
-                    element: <PrivateRout><AddReview /></PrivateRout>
+
+                    element: <PrivateRout> <AddReview /></PrivateRout>
                 },
                 {
                     path: '/Singleservice/:Id',
                     loader: ({ params }) => fetch(`http://localhost:5000/allservices/${params.Id}`),
-                    element: <Singleservice />
+                    element: <PrivateRout><Singleservice /></PrivateRout>
 
                 },
                 {
                     path: 'Addservice',
-                   element:<Addservice/> 
+                    element: <Addservice />
                 }
-               
+
             ]
         },
         {

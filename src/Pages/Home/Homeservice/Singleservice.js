@@ -2,10 +2,12 @@ import { Rating } from 'flowbite-react';
 import React from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { useLoaderData } from 'react-router-dom';
+import UseTitle from '../../../Hooks/Usetitle';
 import Allreviewsaid from '../../AddReview/allreviewsaid/Allreviewsaid';
 import Reviewsfst from './Homeservicecart/reviewspart/reviewsfst/Reviewsfst';
 
 const Singleservice = () => {
+    UseTitle('Singleservice')
     const singleS = useLoaderData();
     const {description, details, name, picture, price, rating, _id } = singleS;
     return (
