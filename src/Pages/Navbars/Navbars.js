@@ -40,8 +40,8 @@ const Navbars = () => {
                     <Link to='/Blog'>
                         Blog
                     </Link>
-                    {users?.email && <Link to='/AddReview'>Add Review</Link>}
-                    {users?.email && <Link>My services</Link>}
+                    {users?.email && <Link to='/AddReview'>My reviews</Link>}
+                    {users?.email && <Link>Add service</Link>}
                     {users?.email ? (
 
 
