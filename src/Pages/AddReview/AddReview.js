@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useContext } from 'react';
+import { toast } from 'react-toastify';
 import { AuthContext } from '../../context/UseContext';
 import UseTitle from '../../Hooks/Usetitle';
 import Addreviewtable from './addreviewtable/Addreviewtable';
@@ -11,7 +12,7 @@ const AddReview = () => {
     const { users } = useContext(AuthContext);
     const [addReviews, setAddReview] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${users?.email}`)
+        fetch(`https://server-five-vert.vercel.app/reviews?email=${users?.email}`)
             .then(res => res.json())
             .then(data => setAddReview(data))
     }, [users?.email]);
@@ -22,13 +23,13 @@ const AddReview = () => {
         const deleteagree = window.confirm(`Are you sure delete review item: ${id}`);
         if (deleteagree) {
             console.log('delete user', id)
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://server-five-vert.vercel.app/reviews/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        alert('delete done')
+                        toast.success('delete success ')
                         const remeining = addReviews.filter(rw => rw._id !== id);
                         setAddReview(remeining);
                     }

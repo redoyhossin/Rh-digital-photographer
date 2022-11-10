@@ -12,7 +12,7 @@ const Addservice = () => {
     const handleform = (e) => {
         e.preventDefault();
 
-        fetch('http://localhost:5000/allservices', {
+        fetch('https://server-five-vert.vercel.app/allservices', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

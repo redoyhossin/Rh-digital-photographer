@@ -29,7 +29,7 @@ const Reviewsfst = ({ singleS }) => {
             name
         }
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://server-five-vert.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

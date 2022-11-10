@@ -22,12 +22,12 @@ const Router = () => {
                 {
                     path: '/',
                     element: <Home />,
-                    loader: () => fetch('http://localhost:5000/allserviceshome')
+                    loader: () => fetch('https://server-five-vert.vercel.app/allserviceshome')
                 },
                 {
                     path: 'Allservicehome',
                     element: <PrivateRout><Allservicehome /></PrivateRout>,
-                    loader: () => fetch('http://localhost:5000/allservices')
+                    loader: () => fetch('https://server-five-vert.vercel.app/allservices')
                 },
                 {
                     path: 'Blog',
@@ -48,7 +48,7 @@ const Router = () => {
                 },
                 {
                     path: '/Singleservice/:Id',
-                    loader: ({ params }) => fetch(`http://localhost:5000/allservices/${params.Id}`),
+                    loader: ({ params }) => fetch(`https://server-five-vert.vercel.app/allservices/${params.Id}`),
                     element: <PrivateRout><Singleservice /></PrivateRout>
 
                 },

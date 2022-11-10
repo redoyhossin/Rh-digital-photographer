@@ -10,7 +10,7 @@ const Addreviewtable = ({ rv, handledelete }) => {
     const [servicesOder, setservicesOder] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${_id}`)
+        fetch(`https://server-five-vert.vercel.app/reviews/${_id}`)
             .then(res => res.json())
             .then(data => console.log(data))
     }, [_id]);

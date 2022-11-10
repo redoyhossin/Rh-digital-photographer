@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { AuthContext } from '../../context/UseContext';
 import UseTitle from '../../Hooks/Usetitle';
 
@@ -37,7 +38,7 @@ const Login = () => {
     const handleReset = () => {
         ResetPassword(email)
             .then(() => {
-                alert('check email')
+                toast.success('check email')
             }).catch((error) => console.log('error', error.message))
     };
 
