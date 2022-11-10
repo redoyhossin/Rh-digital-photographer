@@ -1,6 +1,7 @@
 import React from 'react';
 import UseTitle from '../../Hooks/Usetitle';
 import Homeservice from './Homeservice/Homeservice';
+import Secondsection from './secondsection/Secondsection';
 import Slider from './slider/Slider';
 
 const Home = () => {
@@ -8,7 +9,8 @@ const Home = () => {
     return (
         <div>
         <Slider />
-        <Homeservice/>
+        <Homeservice />
+        <Secondsection/>
         </div>
     );
 };
