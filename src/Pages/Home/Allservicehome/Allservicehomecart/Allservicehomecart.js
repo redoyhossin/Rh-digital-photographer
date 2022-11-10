@@ -3,8 +3,9 @@ import React from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link } from 'react-router-dom';
 
-const Allservicehomecart = ({ shows }) => {
-    const { description, details, name, picture, price, rating, _id } = shows;
+const Allservicehomecart = ({shows}) => {
+
+    const { photo,description, details, name, picture, price, rating, _id } = shows;
 
     return (
         <div className='flex justify-center mb-6'>
@@ -31,7 +32,9 @@ const Allservicehomecart = ({ shows }) => {
                                 {rating}
                             </p>
                         </Rating>
-                        <p className="dark:text-gray-100">{description.slice(0, 100)}...</p>
+                        
+                             <p className="dark:text-gray-100">{description?.slice(0, 100)}...</p>
+                       
                         <Link to={`/Singleservice/${_id}`}>
                             <Button className='mt-2'>
                                 view details

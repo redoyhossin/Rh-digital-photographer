@@ -7,7 +7,7 @@ import Reviewsfst from './Homeservicecart/reviewspart/reviewsfst/Reviewsfst';
 
 const Singleservice = () => {
     const singleS = useLoaderData();
-    const { description, details, name, picture, price, rating, _id } = singleS;
+    const {description, details, name, picture, price, rating, _id } = singleS;
     return (
         <div className='mb-10'>
             <div className='  lg:flex lg:justify-around px-5 my-4'>

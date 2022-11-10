@@ -4,18 +4,15 @@ import { useEffect } from 'react';
 
 
 
-const Addreviewtable = ({ rv,handledelete }) => {
+const Addreviewtable = ({ rv, handledelete }) => {
 
-    const { Message, email, name,  picture, price, rating, servicesName, services, _id } = rv;
+    const { Message, email, name, picture, price, rating, servicesName, services, _id } = rv;
     const [servicesOder, setservicesOder] = useState({});
-    
+
     useEffect(() => {
         fetch(`http://localhost:5000/reviews/${_id}`)
-            
             .then(res => res.json())
-
-            .then(data => setservicesOder(data))
-        
+            .then(data => console.log(data))
     }, [_id]);
 
 

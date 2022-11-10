@@ -27,7 +27,7 @@ const Router = () => {
                 {
                     path: 'Allservicehome',
                     element: <Allservicehome />,
-                    // loader: () => fetch('http://localhost:5000/allservices')
+                    loader: () => fetch('http://localhost:5000/allservices')
                 },
                 {
                     path: 'Blog',
@@ -67,7 +67,7 @@ const Router = () => {
     ])
 
     return (
-        <div>
+        <div >
             <RouterProvider router={router}>
 
             </RouterProvider>

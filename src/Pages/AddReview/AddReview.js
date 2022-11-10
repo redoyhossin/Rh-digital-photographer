@@ -37,7 +37,7 @@ const AddReview = () => {
     }
 
     return (
-        <div>
+        <div className='my-28'>
 
             <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
 
