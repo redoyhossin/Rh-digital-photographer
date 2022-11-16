@@ -4,6 +4,7 @@ import HandleError from '../HandleError/HandleError';
 import Main from '../Layout/Main';
 import AddReview from '../Pages/AddReview/AddReview';
 import UpdateUser from '../Pages/AddReview/addreviewtable/UpdateUser/UpdateUser';
+import Success from '../Pages/allsuccess/success/Success';
 import Blog from '../Pages/Blog/Blog';
 import Allservicehome from '../Pages/Home/Allservicehome/Allservicehome';
 import Home from '../Pages/Home/Home';
@@ -64,6 +65,11 @@ const Router = () => {
                 }
 
             ]
+        },
+        {
+            path: 'Success',
+            element: <Success />,
+            loader: () => fetch('http://localhost:5000/allsuccess'),
         },
         {
             path: '*',

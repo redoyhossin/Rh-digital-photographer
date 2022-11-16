@@ -10,6 +10,8 @@ import pic12 from '../../../Assets/gallery/pic12.jpg'
 import pic13 from '../../../Assets/gallery/pic13.jpg'
 import pic14 from '../../../Assets/gallery/14.jpg'
 import pic15 from '../../../Assets/gallery/pic5.jpg'
+import { Button } from 'flowbite-react';
+import { Link } from 'react-router-dom';
 
 const Sectiongallery = () => {
     return (
@@ -27,6 +29,14 @@ const Sectiongallery = () => {
                     <img alt="" className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square" src={pic13} />
                     <img src={pic14} alt="" className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-1 md:row-start-3 dark:bg-gray-500 aspect-square" />
                     <img src={pic15} alt="" className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-1 md:row-start-3 dark:bg-gray-500 aspect-square" />
+                </div>
+                <div className=' flex justify-center'>
+                    <Button
+                        outline={true}
+                        gradientDuoTone="purpleToBlue"
+                    >
+                        <Link to='/Success'>view Success</Link>
+                    </Button>
                 </div>
             </section>
         </div>
