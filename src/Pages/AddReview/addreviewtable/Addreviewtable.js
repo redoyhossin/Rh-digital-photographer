@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-
+import { Link } from 'react-router-dom';
 
 
 
@@ -45,7 +45,7 @@ const Addreviewtable = ({ rv, handledelete }) => {
                 <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">{price} </a>
             </td>
             <td className="py-4 px-6">
-                <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit user</a>
+                <Link to={`/UpdateUser/${_id}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit user</Link>
             </td>
         </tr>
     );

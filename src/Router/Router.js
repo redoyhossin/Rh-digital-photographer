@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HandleError from '../HandleError/HandleError';
 import Main from '../Layout/Main';
 import AddReview from '../Pages/AddReview/AddReview';
+import UpdateUser from '../Pages/AddReview/addreviewtable/UpdateUser/UpdateUser';
 import Blog from '../Pages/Blog/Blog';
 import Allservicehome from '../Pages/Home/Allservicehome/Allservicehome';
 import Home from '../Pages/Home/Home';
@@ -55,6 +56,11 @@ const Router = () => {
                 {
                     path: 'Addservice',
                     element: <Addservice />
+                },
+                {
+                    path: '/UpdateUser/:UpdateUserID',
+                    element: <UpdateUser />,
+                   loader: ({ params }) => fetch(`http://localhost:5000/reviews/${params.UpdateUserID}`),
                 }
 
             ]
