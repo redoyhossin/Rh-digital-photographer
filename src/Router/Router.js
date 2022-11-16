@@ -60,7 +60,7 @@ const Router = () => {
                 {
                     path: '/UpdateUser/:UpdateUserID',
                     element: <UpdateUser />,
-                   loader: ({ params }) => fetch(`http://localhost:5000/reviews/${params.UpdateUserID}`),
+                    loader: ({ params }) => fetch(`https://server-five-vert.vercel.app/reviews/${params.UpdateUserID}`),
                 }
 
             ]

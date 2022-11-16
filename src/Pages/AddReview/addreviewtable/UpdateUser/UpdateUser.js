@@ -14,7 +14,7 @@ const UpdateUser = () => {
 
     const handleupdate = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:5000/reviews/${loaddata._id}`, {
+        fetch(`https://server-five-vert.vercel.app/reviews/${loaddata._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
