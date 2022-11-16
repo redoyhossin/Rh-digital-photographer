@@ -69,7 +69,7 @@ const Router = () => {
         {
             path: 'Success',
             element: <Success />,
-            loader: () => fetch('http://localhost:5000/allsuccess'),
+            loader: () => fetch('https://server-five-vert.vercel.app/allsuccess'),
         },
         {
             path: '*',
