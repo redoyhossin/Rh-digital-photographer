@@ -22,7 +22,6 @@ const AddReview = () => {
 
         const deleteagree = window.confirm(`Are you sure delete review item: ${id}`);
         if (deleteagree) {
-            console.log('delete user', id)
             fetch(`https://server-five-vert.vercel.app/reviews/${id}`, {
                 method: 'DELETE'
             })

@@ -32,7 +32,6 @@ const Login = () => {
     const Reseteamil = (e) => {
         const email = e.target.value;
         setResetEmail(email)
-        console.log(email)
     };
 
     const handleReset = () => {

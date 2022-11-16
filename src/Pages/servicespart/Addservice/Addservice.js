@@ -34,7 +34,6 @@ const Addservice = () => {
         const Newuser = { ...user };
         Newuser[filde] = value;
         setUser(Newuser);
-        console.log(user)
         
     }
     return (
